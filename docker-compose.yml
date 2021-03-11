@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  app-alice:
+    build: alice
+    image: app-alice
+    container_name: app-alice
+    ports:
+      - 8080:8080
+    links:
+      - app-bob
+  app-bob:
+    build: bob
+    image: app-bob
+    container_name: app-bob
+    ports:
+      - 8081:8081
